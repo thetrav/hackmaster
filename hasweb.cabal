@@ -1,0 +1,19 @@
+name:                hasweb
+version:             0.0.1
+synopsis:            Haskel can has web?
+homepage:            https://github.com/theTrav/hasweb
+license:             MIT
+author:              Travis Dixon
+maintainer:          travis@dixon.net.au
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable todo
+  main-is:             Main.hs
+  -- other-modules:       
+  build-depends:       base ==4.7.*
+                     , scotty
+                     , text
+                     , wai-middleware-static
+                     

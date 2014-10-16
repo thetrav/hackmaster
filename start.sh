@@ -1,1 +1,1 @@
-.cabal-sandbox/bin/todo
+.cabal-sandbox/bin/hasweb

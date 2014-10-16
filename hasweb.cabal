@@ -9,11 +9,14 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.8
 
-executable todo
+executable hasweb
   main-is:             Main.hs
   -- other-modules:       
   build-depends:       base ==4.7.*
                      , scotty
                      , text
                      , wai-middleware-static
+                     , sqlite-simple
+                     , aeson
+                     , transformers
                      

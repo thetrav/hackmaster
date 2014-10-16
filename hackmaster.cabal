@@ -1,7 +1,7 @@
-name:                hasweb
+name:                hackmaster
 version:             0.0.1
-synopsis:            Haskel can has web?
-homepage:            https://github.com/theTrav/hasweb
+synopsis:            Combat tracker for my hackmaster character
+homepage:            https://github.com/theTrav/hackmaster
 license:             MIT
 author:              Travis Dixon
 maintainer:          travis@dixon.net.au
@@ -9,7 +9,7 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.8
 
-executable hasweb
+executable hackmaster
   main-is:             Main.hs
   -- other-modules:       
   build-depends:       base ==4.7.*

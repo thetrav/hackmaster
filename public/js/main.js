@@ -90,27 +90,31 @@ $(function() {
         );
 
         var timeEffect = function(time) { return function(event) {
-            if(event.endTime || event.endTime == 0) {
-                if(time >= event.endTime) {
-                    console.log("pushing end effect "+ event.id)
-                    modelBus.push({eventType: "stopEffect", targetId: event.id});
-                }
-                return $.extend(event, {
-                    timeLeft: event.endTime - time
-                });
-            } else {
+            if(!event.endTime && event.endTime != 0) {
                 return $.extend(event, {
                     startTime: time,
                     endTime: time + event.duration,
                     timeLeft: event.duration
                 });
+            } else {
+                return $.extend(event, {timeLeft: event.endTime - time});
             }
         }};
 
-        return Bacon.combineWith(function(time, effects) {
+        var combined = Bacon.combineWith(function(time, effects) {
             console.log("combining time: %o with effects %o", time, effects);
             return _.map(effects, timeEffect(time));
         }, time, effects);
+
+        combined.onValue(function(events) {
+            _.each(events, function(event) {
+                if(event.timeLeft <= 0) {
+                    modelBus.push({eventType: "stopEffect", targetId: event.id});
+                }
+            })
+        });
+        
+        return combined;
     }();
     
 

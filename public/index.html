@@ -2,16 +2,17 @@
     <head>
         <title>Hackmaster Combat Tracker</title>
         <link rel="stylesheet" href="main.css">
-        <script src="zepto-1.1.4.js"></script>
-        <script src="bacon-0.7.12.js"></script>
-        <script src="main.js"></script>
+        <script src="js/lib/zepto-1.1.4.js"></script>
+        <script src="js/lib/underscore-1.7.0.js"></script>
+        <script src="js/lib/bacon-0.7.12.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
         <table class="stats">
             <tr>
                 <th>Time</th> 
                 <td class="stat-time"></td>
-                <td><button type="button" id="nextSecond">+</button></td>
+                <td><button type="button" class="nextSecond">+</button></td>
             </tr>   
             <tr>
                 <th>hp</th> 
@@ -34,12 +35,22 @@
                 <td class="stat-initiative"></td>
             </tr>
         </table>
+
+        <table class="effects">
+        </table>
         
+        <input class="effectLabel" value="first"/><button class="startEffect">start</button>
+        <textarea id="effects"></textarea>
 
         <textarea id="events"></textarea>
 
+
         <div class="createStateEvent">
             <select class="state"></select><select class="function"></select><input class="value" type="number"/><button type="button" class="createEvent">AddEvent</button>
+        </div>
+
+        <div class="actions">
+            
         </div>
     </body>
 </html>

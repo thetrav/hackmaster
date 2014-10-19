@@ -1,1 +1,1 @@
-.cabal-sandbox/bin/hasweb
+.cabal-sandbox/bin/hackmaster
